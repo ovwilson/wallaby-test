@@ -5,7 +5,11 @@ export class WallabyTestPage {
     return browser.get('/');
   }
 
-  getParagraphText() {
-    return element(by.css('app-root h1')).getText();
+  getParagraphText(css: string) {
+    return element(by.css(css)).getText();
+  }
+
+  setParagraphText(css: string, value: string) {
+    element(by.css(css)).sendKeys(value);
   }
 }
